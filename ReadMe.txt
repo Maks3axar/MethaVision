@@ -1,0 +1,8 @@
+The file repository for the project "MethaVizion" - automatic cell recognition and count from the microphotographies 
+cell size and concentration during the growth of bacteria in suspension culture.
+
+The repository includes:
+1. dataset with photographies (original and synthetic) to train Yolo
+2. Yolo
+3. Algorithms (additional calculations)
+4. GUI (grafical user interface)
