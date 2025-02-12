@@ -6,6 +6,7 @@ The program has to do:
 	+ monococci 
 	+ diplococci
 	+ tetracocci
+	+ bacilli
 	+ long rods
 	+ thin rods
 	+ small rods
