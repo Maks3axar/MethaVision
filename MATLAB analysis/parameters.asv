@@ -1,0 +1,9 @@
+function p = parameters(x)
+
+% TK = T_exp + 273;       % conversion of of temperature from [°C] to [°K]
+mu_max = x(3);          % maximal rate of glucose consumption, [g_glc/(g_DW*h)]
+t_lag = x(2);           % lag-time, [h]
+% Ks = x(4);              % Ks, [glc/L]
+
+p = [mu_max t_lag Ks m_glc Yx_glc_true]; 
+end

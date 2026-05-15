@@ -1,0 +1,72 @@
+% the code has been written by Dr.Maksim Zakhartsev (C1BioEngineering,
+% Moscow, Russia) on 10.07.2025
+
+%% load raw data
+load summary_Table.mat
+
+% column1 - Object ID
+% column2 - text value of the class
+% column3 - numerical value of the class
+% column4 - area of object in [pixels]
+% column5 - area of object in [micrometer^2]
+% column6 - numerical value of recognition confidence (from 0 to 1)
+
+%% listing the classes of cell morphotypes and counting numbers of the objects within the classes
+[categories, ~, idx] = unique(summary_Table.class);
+counts_within_category = accumarray(idx, 1); % Подсчёт частоты каждой категории
+disp(table(categories, counts_within_category, 'VariableNames', {'Category', 'Count'}));
+summary_Table_categories = table(categories,counts_within_category);
+
+figure(1) % Открываем новое окно для графика
+piechart(summary_Table_categories,"counts_within_category","categories")
+
+%%
+targetValue = 'diplococci'; 
+
+% Логическая индексация: выбираем строки, где столбец class равен targetValue
+rows = summary_Table{:, 2} == targetValue;
+
+% Извлекаем значения из столбца 6 для выбранных строк
+confidence = summary_Table{rows, 6}; % 
+area = summary_Table{rows, 5};
+
+% 1. Рассчитываем параметры нормального распределения площади объекта в классе
+n = length(area); % Количество точек
+aver = mean(area); % Среднее значение
+md = median(area); % Медиана
+sigma = std(area); % Стандартное отклонение
+
+% 2. Создаем гистограмму
+figure(2); % Открываем новое окно для графика
+subplot(2,2,1)
+h = histogram(area, 'Normalization', 'pdf'); % Нормализация на плотность вероятности
+    % 3. Добавляем кривую Гаусса
+    hold on;
+    x = linspace(min(area), max(area), 100); % Диапазон значений для кривой
+    y = normpdf(x, aver, sigma); % Плотность нормального распределения
+    plot(x, y, 'r-', 'LineWidth', 2); % Красная линия для Гаусса
+xlabel('object area [\mum^2]');
+ylabel('Плотность вероятности');
+title('diplococci');
+% legend('Гистограмма', 'Гауссово распределение');
+hold off;
+
+subplot(2,2,2)
+boxplot(area,'Labels','diplococci')
+title('diplococci');
+ylabel('object area [\mum^2]')
+% xlabel('diplococci')
+
+subplot(2,2,3)
+histogram(confidence)
+title('diplococci');
+xlabel('confidence');
+ylabel('Плотность вероятности');
+
+subplot(2,2,4)
+plot(area,confidence,'.b'); %,area2,result2,'.r',area3,result3,'.k')
+title('diplococci');
+xlabel('object area [\mum^2]')
+ylabel('confidence')
+% legend('diplococci'); %,'monococci','tetracocci')
+
