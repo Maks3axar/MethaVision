@@ -1,8 +1,0 @@
-function y0 = initial_conditions(x)
-
-OD600 = x(1);     % initial biomass innoculum, [OU] @ 600 [nm]
-lag-x(2) - initial lag-time, [h]
-% x(3) - initial maximal mu, [1/h]
-
-y0 = [OD600];
-end

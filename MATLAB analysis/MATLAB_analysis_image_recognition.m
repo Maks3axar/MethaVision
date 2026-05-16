@@ -1,5 +1,15 @@
-% the code has been written by Dr.Maksim Zakhartsev (C1BioEngineering,
-% Moscow, Russia) on 10.07.2025
+%% Automated Object Recognition Analysis & Statistics
+% This script automates the statistical parsing, classification, and visualization of object-recognition datasets generated from cell morphotype image analyses.
+
+% Features
+% Categorical Data Aggregation: Automatically groups, counts, and displays the distribution frequencies of distinct recognized cell categories using categorical accumulation (`accumarray`).
+% Morphotype Distribution Plotting: Generates an immediate visual breakdown of population classes via an automated pie chart.
+% Targeted Morphological Analysis: Filters specific target classes (e.g., `diplococci`) via logical indexing to isolate cell area ($\mu m^2$) and neural network recognition confidence metrics.
+% Statistical Distribution Fitting: Estimates Normal (Gaussian) distribution parameters (Mean, Median, Standard Deviation) for cell sizes and overlays a probability density function (PDF) curve over experimental histograms.
+% Outlier & Range Inspection: Generates synchronized box plots (`boxplot`) to verify geometric variance, asymmetry, and outlier distribution within isolated morphotype groups.
+
+% Developer: Dr. Maksim Zakhartsev (C1BioEngineering, Moscow, Russia)
+% Release Date: 20.02.2026
 
 %% load raw data
 load summary_Table.mat

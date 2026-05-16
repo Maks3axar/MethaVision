@@ -1,6 +1,7 @@
-data_analysis_with_GUI.m - launches analysis of 
-spheroid_shadow_gui.m
-double_sphere_shadow_gui.m
-MATLAB_analysis_image_recognition.m
-run.m
-run_eva.m
+The MATLAB scripts:
+data_analysis_with_GUI.m - launches script with automated processing, analysis, and visualization of experimental microbiological data. The script bridges high-throughput image analysis with kinetic growth modeling for bioreactor and cultivation monitoring. 
+	dataset.mat - experimental datsset includes results of image analysis (object_id, class_id, area_pixels, area_m2, confidence) of pure Methylococcus capsulatus (i.e. without satellites) culture in course of substrate-unlimited batch growth. 3,5,7,9 hour growth kinetics with three independent repetitions (flasks).  
+	OD600.mat - experimental dataset of optical dencity of Methylococcus capsulatus pure culture in course of substrate-unlimited batch growth. 3,5,7,9 hour growth kinetics with three independent repetitions (flasks).
+spheroid_shadow_gui.m - this script models, rotates, and analyzes the geometric shadows (orthogonal projections) cast by an oblate or prolate spheroid (i.e. monococcus or rod) onto a horizontal surface.
+double_sphere_shadow_gui.m - this script models, rotates, and analyzes the 3D geometry and horizontal shadow projections of two overlapping spheres (i.e. diplococcus). This tool simulates morphological variations in dividing or budding microbial cells.
+MATLAB_analysis_image_recognition.m - this script automates the statistical parsing, classification, and visualization of object-recognition datasets generated from cell morphotype image analyses.

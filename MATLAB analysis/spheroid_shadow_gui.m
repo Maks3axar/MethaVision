@@ -1,3 +1,17 @@
+%% Spheroid Shadow Model UI
+% The model simulates, rotates, and analyzes the geometric shadows (orthogonal projections) cast by an oblate or prolate spheroid onto a horizontal surface.
+
+% Features
+% Interactive 3D Visualization: Renders a 3D spheroid using dynamic surface plotting (`surf`) with custom lighting.
+% Real-time Geometric Controls: Sliders to adjust the equatorial semi-axes ($a=b$) and the polar semi-axis ($c$) to transform the shape from a sphere to a prolate or oblate spheroid.
+% Rotation Modeling: Slider to control the rotation angle ($\theta$) around the X-axis using a standard 3D rotation matrix.
+% Shadow Projection Mapping: Dynamically calculates and displays the exact 2D elliptical boundary and area of the shadow cast on a lower projection plane ($Z = -2.5$).
+% Numerical Metrics: Displays real-time calculations of the spheroid's volume and the mathematically projected shadow area.
+
+% Developer: Dr. Maksim Zakhartsev (C1BioEngineering, Moscow, Russia)
+% Release Date: 20.02.2026
+
+%%
 function spheroid_shadow_gui()
 
 %% === UI ===

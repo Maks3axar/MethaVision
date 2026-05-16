@@ -1,3 +1,17 @@
+%% Double Sphere Union & Shadow App
+% The script models, rotates, and analyzes the 3D geometry and horizontal shadow projections of two overlapping spheres (i.e. diplococcus). This tool simulates morphological variations in dividing or budding microbial cells.
+
+% Features
+% Dual-Axes Interactive UI: Displays a 3D geometric render alongside a real-time plot tracking shadow area variations across tilt angles ($\theta = 0^\circ \text{ to } 180^\circ$).
+% Microbial Morphology Scaling: Dynamic sliders to adjust cell radius ($R$) and the center-to-center distance ($d$) to visualize either separate cells or an overlapping cell union.
+% Orientation Controls: Interactive sliders for tilt angle ($\theta$) and azimuth rotation ($\phi$) implemented via 3D coordinate transformation matrices.
+% Hybrid Shadow Analysis: Implements a binary matrix mask projection technique (`bwboundaries`) to display the overlapping shadow on a base plane ($Z = -4$), providing both exact analytical and pixel-counting numerical area metrics.
+% Volumetric Metrics: Instantly calculates the total combined surface area and volume of the single or intersecting double-sphere union.
+
+% Developer: Dr. Maksim Zakhartsev (C1BioEngineering, Moscow, Russia)
+% Release Date: 20.02.2026
+
+%% 
 function double_sphere_union_advanced()
 
 fig = uifigure('Name','Union of Two Spheres','Position',[100 100 1300 720]);

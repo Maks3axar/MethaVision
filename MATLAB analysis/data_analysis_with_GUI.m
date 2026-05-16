@@ -1,3 +1,22 @@
+%% Cell Cycle & Growth Rate Analysis (with GUI Integration)
+% This scipt contains pipeline with automated processing, analysis, and visualization of experimental microbiological data. The script bridges high-throughput image analysis with kinetic growth modeling for bioreactor and cultivation monitoring.
+
+% Key Features:
+% Image Data Aggregation: Automatically merges and vertically concatenates multi-replicate dataset matrix files (`dataset.mat`) across multiple experimental timepoints ($t = 3, 5, 7, 9$ hours).
+% Interactive Data Inspection (GUI): Integrates with a custom Graphical User Interface (`ScatterGUI`) to visualize single-cell scattering parameters dynamically for each timepoint.
+% Growth Kinetics Modeling: Loads optical density records (`OD600.mat`) across independent biological replicates to calculate culture growth rates.
+% Statistical Analysis & Error Handling: Computes the mean durations and standard deviations for distinct cell cycle phases (e.g., $G_1/S/G_2$ and $M$ phases).
+% Automated Plotting: Generates publication-ready figures featuring custom markers, error bars (`errorbar`), and formatted axis layouts to track cell cycle distribution dynamics over time.
+
+% File Requirements
+% To run the script successfully, ensure the following workspace files are present in your directory:
+    % dataset.mat – Containing the structured matrix arrays (`photoanalysisS_X_X`) from image processing.
+    % OD600.mat – Containing time-series optical density calibration data.
+    % ScatterGUI.m – The dependent GUI function utilized for scattering profile visualization.
+
+% Developer: Dr. Maksim Zakhartsev (C1BioEngineering, Moscow, Russia)
+% Release Date: 20.02.2026
+
 %% Loading data from processed photos
 load dataset.mat
 
