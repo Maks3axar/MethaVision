@@ -2,5 +2,5 @@ The file repository for the project "BactoScope" - automatic bacterial cell reco
 cell size and concentration during the growth of bacteria in suspension culture (methanotrophic consortium = culture).
 
 The repository includes:
-- Example images of pure and mixed industrial culture based on strain Methylococcus capsulatus KN2
+- Example images (from microscope) of pure and mixed industrial culture based on strain Methylococcus capsulatus KN2
 - MATLAB analysis 
